@@ -23,7 +23,8 @@ model User {
   FechaNac     DateTime
   FechaReg     DateTime  @default(now())
   Puntaje      Int       @default(0)
-  Nivel       String    @default("Explorador del Café")
+  Nivel       String     @default("Explorador del Café")
+  Eliminado    Boolean   @default(false)
 
   Visita Visita[]
 }

@@ -11,12 +11,13 @@ export class UserEntity{
         public FechaNac    : Date,
         public FechaReg    : Date,
         public Puntaje     : number,
-        public Nivel       : string
+        public Nivel       : string,
+        public Eliminado   : boolean
     ){}
 
     static fromObject(obj: { [key: string]: any }): UserEntity {
         const { Dni,NroPasaporte, Nombres, Correo, Telefono, Distrito,
-                FechaNac, FechaReg, Puntaje, Nivel } = obj;
+                FechaNac, FechaReg, Puntaje, Nivel,Eliminado } = obj;
 
         if(Dni!) {throw new Error('dni no puede ser nulo');}
         if(NroPasaporte!) {throw new Error('nro_pasaporte no puede ser nulo');}
@@ -28,6 +29,7 @@ export class UserEntity{
         if(FechaReg!) {throw new Error('fecha_registro no puede ser nulo');}
         if(Puntaje!) {throw new Error('puntaje no puede ser nulo');}
         if(Nivel!) {throw new Error('nivel no puede ser nulo');}
+        if(Eliminado!) {throw new Error('eliminado no puede ser nulo');}
 
 
         const newFechaRegistro = new Date(FechaNac);
@@ -50,7 +52,8 @@ export class UserEntity{
             newFechaNacimiento,
             newFechaRegistro,
             Puntaje,
-            Nivel
+            Nivel,
+            Eliminado
         );
 
     }

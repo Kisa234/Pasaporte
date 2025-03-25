@@ -5,7 +5,7 @@ import { UpdateUserDto } from "../dtos/user/update";
 
 export abstract class UserDatasource {
     abstract createUser(createUserDto:CreateUserDto):  Promise<UserEntity>;
-    abstract updateUser(updateUserDto:UpdateUserDto):  Promise<UserEntity>;
-    abstract getUserById(id: string): Promise<UserEntity>;
-    abstract deleteUser(id: string):  Promise<UserEntity>;
+    abstract updateUser(dni:number,updateUserDto:UpdateUserDto):  Promise<UserEntity>;
+    abstract getUserById(id: number): Promise<UserEntity>;
+    abstract deleteUser(id: number):  Promise<UserEntity>;
 }
